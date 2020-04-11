@@ -16,25 +16,34 @@ font-family: 'Open Sans', arial, sans-serif;
     height: 100%; /* Высота страницы */
     background: url(../img/login.jpg); /* Параметры фона */
     background-size: cover; /* Фон занимает всю доступную площадь */
+    background-repeat: no-repeat;
    } 
 
 
-@media(max-height:770px ){
-    .log-window{
-    height: 90%;
-    width: 800px;
+@media screen and (max-width: 600px) {
+       body {
+    margin: 0; /* Убираем отступы */
+    height: 100%; /* Высота страницы */
+    width: 100%;
+    background: url(../img/login.jpg); /* Параметры фона */
+  }
+  .login-window{
+    height: 1420px;
+    width: 700px;
     color: black;
     background: rgba(255,255,255,0.85);
-    
-    top: 10%;
+    position: absolute;
+    top: 0;
     right: 0;
-    bottom: 10%;
+    bottom: 0;
     left: 0;
     margin: auto;
-    flex-direction: column;
-  
+    
 }
+
+
 }
+
 
 .log-window{
     height: 700px;
