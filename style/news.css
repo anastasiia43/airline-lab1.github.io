@@ -8,100 +8,42 @@ body {
     background-size: cover; /* Фон занимает всю доступную площадь */
 }
 
-.top-menu:before,
-.top-menu:after {
-  content: "";
-  position: fixed;
-  z-index: 2;
-  left: 0;
-  width: 100%;
-  height: 3px;
-}
-.top-menu:before {
-  top: 0;
-  border-bottom: 1px dashed rgba(255,255,255,.2);
-}
-.top-menu:after {
-  bottom: 0;
-  border-top: 1px dashed rgba(255,255,255,.2);
-}
-.menu-main {
-  background: rgba(5,5,5,0.8);
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  text-align: right;
+.topnav {
+  overflow: hidden;
+  background-color: #333;
 }
 
-.menu-main:before {
-  left: -30px;
-  border-left: 12px solid rgba(255, 255, 255, 0);
-}
-.menu-main:after {
-  right: -30px;
-  border-right: 12px solid rgba(255, 255, 255, 0);
-}
-.menu-main li {
-  display: inline-block;
-  margin-right: -4px;
-}
-.menu-main a {
-
-}
-.menu-main__icon{
-  text-decoration: none;
-  display: inline-block;
-  padding: 15px 30px;
-  font-family: 'PT Sans Caption', sans-serif;
-  color: white;
-  transition: .3s linear;
-  font-size: 35px;
-  
-}
-
-.imgeng{
-    text-decoration: none;
-  display: inline-block;
-  padding: 15px 30px;
-  font-family: 'PT Sans Caption', sans-serif;
-  color: white;
-  transition: .3s linear;
-  font-size: 25px;
-        
-}
-.menu-main a.current,
-.menu-main a:hover {background: rgba(0,0,0,8);}
-@media (max-width: 680px) {
-.top-menu {margin: 0;}
-.menu-main{
-        text-align: center;
-    }
-.menu-main li {
+.topnav a {
+  float: right;
   display: block;
-  margin-right: 0;
-    font-size: 15px;
-    
-}
-.imgeng{
-  padding: 5px 0px;       
-}
-    .imgeng img{
-        width: 30px;
-        height: 30px;
-            
-    }
-.menu-main__icon{
-        font-size: 15px;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 18px 30px;
+  text-decoration: none;
+  font-size: 27px;
 }
 
-.menu-main:before, 
-.menu-main:after {content: none;}
-.menu-main a {display: block;}
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+  margin: 0;
 }
+
+.active {
+  color: white;
+}
+
+.topnav .icon {
+  display: none;
+}
+
 
 .conatiner {
 	width: 100%;
 	height: 500px;
+}
+.conatiner a{
+	text-decoration: none;
 }
 .wrap {
 	display: -webkit-box;
