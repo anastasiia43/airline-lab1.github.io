@@ -1,59 +1,53 @@
 <html><head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="../style/new_item.css">
-<link rel="stylesheet" href="../style/news.css">
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link rel="stylesheet" type="text/css" media="screen and (max-device-width: 600px)" href="../style_mobile/new_item_mobile.css" />
+<link rel="stylesheet" type="text/css" media="screen and (min-device-width: 601px)" href="../style/new_item.css" />
+
+<link rel="stylesheet" type="text/css" media="screen and (max-device-width: 600px)" href="../style_mobile/news_mobile.css" />
+<link rel="stylesheet" type="text/css" media="screen and (min-device-width: 601px)" href="../style/news.css" />
+
 </head>
 <body>
 
-<ul class="menu-main">
-         <li><a href="#" class = 'menu-main__icon'>Home</a></li>
-          <li><a href="my_ticket.html" class = 'menu-main__icon'>My ticket</a></li>
-          <li><a href="news.html" class = 'menu-main__icon'>New</a></li>
-          <li><a href="../index.html" class ="imgeng"><img src = "../img/icons8-%D0%B2%D1%8B%D1%85%D0%BE%D0%B4-96.png" width="50" height="50"></a></li>
-        </ul>
+<div class="topnav" id="myTopnav">
+  <a href="../index.html" class="active">Log out</a>
+  <a href="">Home</a>
+  <a href="my_ticket.html">My Tickets</a>
+  <a href="news.html">News</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
 
 
 <div class="bgimg-2">
   <div class="caption">
-  <span class="border" style="background-color:transparent;font-size:25px;color: #f7f7f7;">SOME TEXT</span>
+  <span class="border" style="background-color:transparent;font-size:65px;color: #f7f7f7;">SOME TEXT</span>
   </div>
 </div>
 
 <div style="position:relative;">
   <div style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 0px;text-align: justify;">
-    <div class = "table-airline">
+    
 
-        <table>
-        <thead>
-        <tr>
-            <th>Departure</th>
-            <th>Arrival</th>
-
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td><input type="text"></td>
-            <td><input type="text"></td>
-
-        </tr>
-        </tbody>
-        </table>
-    </div>
-    <div class = "date_title">
-    <label>Departure date: </label>
-    <input type="date">
-    </div>
-    <div class = "date_title">
-        <label>Children: </label>
-        <input type="checkbox" class ="container">
+    <div class="form_ticket">
+      <label for="fname">Arival:</label><br>
+      <input type="text" class="input"><br>
+      <label for="lname">Departure:</label><br>
+      <input type="text" class="input"><br>
+      <label for="lname">Departure date:</label><br>
+      <input type="date" class="date_ticket" id="theDate" ><br>
+      <label>Children: </label>
+      <input type="checkbox" class ="container">
     </div>
   </div>
 </div>
 
 <div class="bgimg-3">
   <div class="caption">
-  <button class="border" style="background-color:#282E34;font-size:25px;color: #ddd;padding: 20px;">
+  <button class="border">
 ORDER TICKET</button>
   </div>
 </div>
@@ -65,7 +59,28 @@ ORDER TICKET</button>
 </div>
 
 
+<script>
+function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+}
 
+var date = new Date();
+
+var day = date.getDate();
+var month = date.getMonth() + 1;
+var year = date.getFullYear();
+
+if (month < 10) month = "0" + month;
+if (day < 10) day = "0" + day;
+
+var today = year + "-" + month + "-" + day;       
+document.getElementById("theDate").value = today;
+document.getElementById("theDate").min = today;
+</script>
 </body></html>
-            
 
