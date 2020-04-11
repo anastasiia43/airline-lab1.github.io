@@ -3,10 +3,11 @@
 }
 
 /* Create two equal columns that floats next to each other */
-    .icon-delete{
+.column i{
+
+      padding: 3%;
         float: right;
         
-
     }
 .column {
   float: left;
@@ -41,3 +42,5 @@
   background-color: #666;
   color: white;
 }
+
+
