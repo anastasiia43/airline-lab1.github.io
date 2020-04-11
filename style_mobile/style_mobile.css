@@ -1,0 +1,139 @@
+html { height: 100%; }
+
+*, *:after, *:before {
+box-sizing: border-box;
+padding: 0;
+margin: 0;
+transition: .5s ease-in-out; /* добавим плавность переходов для всех элементов страницы*/
+}
+
+body {
+font-family: 'Open Sans', arial, sans-serif;
+
+}
+   body {
+    margin: 0; /* Убираем отступы */
+    height: 100%; /* Высота страницы */
+    background: url(../img/login.jpg); /* Параметры фона */
+    background-size: cover; /* Фон занимает всю доступную площадь */
+    background-repeat: no-repeat;
+   } 
+
+
+
+
+
+.log-window{
+    height: 1300px;
+    width: 100%;
+    color: black;
+    background: rgba(255,255,255,0.85);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    
+}
+.login-window{
+    height: 800px;
+    width: 100%;
+    color: black;
+    background: rgba(255,255,255,0.85);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    
+}
+
+
+.log-window__title{
+vertical-align: baseline;
+     display: block;
+     color: #000;
+     text-align: center;
+     padding: 16px;
+     text-decoration: none;
+     font-size: 90px
+}
+
+.log-window input{
+     width: 95%;
+     padding: 26px 20px;
+     margin: 26px;
+     display: inline-block;
+     border: 1px solid #ccc;
+     border-radius: 4px;
+     box-sizing: border-box;
+    font-size: 59px;
+    display: flex;
+    top:10%;
+}
+
+.login-window input{
+     width: 95%;
+     padding: 26px 20px;
+     margin: 26px;
+     display: inline-block;
+     border: 1px solid #ccc;
+     border-radius: 4px;
+     box-sizing: border-box;
+    font-size: 59px;
+    display: flex;
+    top:10%;
+}
+.log-window__register{
+    display: inline-block;
+    color: black;
+    text-decoration: none;
+    background: rgba(70,70,70,0.65);
+    font-size: 54pt;
+    padding: 8px;
+    position: absolute;
+    text-align: center;
+    right: 10%;
+    bottom: 10%;
+    left: 10%;
+}
+.log-window__login{
+     display: inline-block;
+    color: black;
+    text-decoration: none;
+    font-size: 38pt;
+    padding: 8px;
+    position: absolute;
+    text-align: center;
+    right: 10%;
+    bottom: 3%;
+    left: 10%;
+}
+
+.log-window__log{
+     display: inline-block;
+    color: black;
+    text-decoration: none;
+    background: rgba(70,70,70,0.65);
+    font-size: 54pt;
+    padding: 8px;
+    position: absolute;
+    text-align: center;
+    right: 10%;
+    bottom: 20%;
+    left: 10%;
+}
+.login-window__register{
+    display: inline-block;
+    color: black;
+    text-decoration: none;
+    font-size: 38pt;
+    padding: 8px;
+    position: absolute;
+    text-align: center;
+    right: 10%;
+    bottom: 3%;
+    left: 10%;
+}
