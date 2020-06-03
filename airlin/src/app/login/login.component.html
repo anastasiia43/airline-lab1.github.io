@@ -1,0 +1,37 @@
+<div class = "body">
+<div class="log-window">
+    <h1 class = "log-window__title">Create acount</h1>
+    <form [formGroup]="loginForm" >
+    <div formGroupName="inputGroup" >
+    <input type="text" formControlName="email" placeholder="Email"
+        [ngClass]="{
+            'input-success--registration': (email.touched) && email.valid,
+            'input-danger--registration': (email.touched) && email.invalid
+        }">
+    <div class="form-control-feedback form-control-feedback--registration" 
+        *ngIf="email.invalid && (email.touched)">
+        <p *ngIf="email.errors.required">email is not required</p>
+        <p *ngIf="email.errors.pattern">email is not valid </p>
+    </div> 
+    <input type="password" formControlName="password" placeholder="Password"
+    [ngClass]="{
+        'input-success--registration': (password.touched) && password.valid,
+        'input-danger--registration': (password.touched) && password.invalid
+    }">
+    <div class="form-control-feedback form-control-feedback--registration" 
+        *ngIf="password.invalid && (password.touched)">
+        <p *ngIf="password.errors.required">password is not required</p>
+        <p *ngIf="password.errors.pattern"> password is not valid </p>
+    </div> 
+    </div>
+    </form>
+    <a class ="log-window__log" [ngClass]="{
+        'btn-disable--registration disabled': password.errors || email.errors }" >Log in</a>
+    
+    <p class="log-window__login">Don`t have account yet?<a routerLink="../registration" >Register</a></p>
+    
+</div>
+<alert type="danger" id="error" style="display: none;">
+    <strong>Error!</strong> Bad request (your email is alredy exists).
+</alert>
+</div>
