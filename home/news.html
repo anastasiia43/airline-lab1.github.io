@@ -7,7 +7,29 @@
 
 	<link rel="stylesheet" type="text/css" media="screen and (max-device-width: 600px)" href="../style_mobile/news_mobile.css" />
 	<link rel="stylesheet" type="text/css" media="screen and (min-device-width: 601px)" href="../style/news.css" />
+	<script>
+		fetch('http://127.0.0.1:8000/news/')
+		  .then(res => res.json())
+		  .then((out) => {
 	
+			  var str = ''
+	
+				out.forEach(function(news) {
+				str +=   `<a href="new_item.html">
+							<div class="box one" style = "background: url(`+news.photo1+`);	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;">
+							<div class="date">
+							<h4>`+news.date+`</h4>
+							</div>
+							<h1>`+news.title+`</h1>
+							</div>
+    						</a>`;
+				}); 
+			  document.getElementById("news").innerHTML = str;
+			})
+		  .catch(err => console.log(err));
+	  </script>
 	</head>
 	<body>
     
@@ -24,135 +46,9 @@
            <!-- TASK LIST -->
        <div class="conatiner">
 <div class="wrap">
+	<div id="news"></div>
 
-	<a href="new_item.html">
-	<div class="box one">
-		<div class="date">
-			<h4>6/29/20</h4>
-		</div>
-		<h1>NEW1</h1>
-	</div>
-    </a>
-	<a href="new_item.html">
-	<div class="box two">
-		<div class="date">
-			<h4>6/29/20</h4>
-		</div>
-		<H1>NEW2</H1>
-	</div>
-    </a>
-    <a href="new_item.html">
-	<div class="box three">
-		<div class="date">
-			<h4>6/29/20</h4>
-		</div>
-		<h1>NEW3</h1>
-	</div>
-	</a>
-    <a href="new_item.html">
-	<div class="box five">
-		<div class="date">
-			<h4>6/29/20</h4>
-		</div>
-		<h1>NEW4</h1>
-	</div>
-	</a>
-    <a href="new_item.html">
-	<div class="box six">
-		<div class="date">
-			<h4>6/29/20</h4>
-		</div>
-		<h1>NEW5</h1>
-	</div>
-	</a>
-    <a href="new_item.html">
-	<div class="box seven">
-		<div class="date">
-			<h4>6/29/20</h4>
-		</div>
-		<h1>NEW6</h1>
-	</div>
-	</a>
-    <a href="new_item.html">
-	<div class="box eight">
-		<div class="date">
-			<h4>6/29/20</h4>
-		</div>
-		<h1>NEW7</h1>
-	</div>
-	</a>
-    <a href="new_item.html">
-	<div class="box nine">
-		<div class="date">
-			<h4>6/29/20</h4>
-		</div>
-		<h1>NEW8</h1>
-	</div>
-	</a>
-    <a href="new_item.html">
-	<div class="box ten">
-		<div class="date">
-			<h4>6/29/20</h4>
-		</div>
-		<h1>NEW9</h1>
-	</div>
-	</a>
-    <a href="new_item.html">
-	<div class="box eleven">
-		<div class="date">
-			<h4>6/29/20</h4>
-		</div>
-		<h1>NEW10</h1>
-	</div>
-	</a>
-    <a href="new_item.html">
-	<div class="box tlv">
-		<div class="date">
-			<h4>6/29/20</h4>
-		</div>
-		<h1>NEW11</h1>
-	</div>
-	</a>
-    <a href="new_item.html">
-	<div class="box thirteen">
-		<div class="date">
-			<h4>6/29/20</h4>
-		</div>
-		<h1>NEW12</h1>
-	</div>
-	</a>
-    <a href="new_item.html">
-	<div class="box ftn">
-		<div class="date">
-			<h4>6/29/20</h4>
-		</div>
-		<h1>NEW13</h1>
-	</div>
-	</a>
-    <a href="new_item.html">
-	<div class="box fith">
-		<div class="date">
-			<h4>6/29/20</h4>
-		</div>
-		<h1>NEW14</h1>
-	</div>
-	</a>
-    <a href="new_item.html">
-	<div class="box sith">
-		<div class="date">
-			<h4>6/29/20</h4>
-		</div>
-		<h1>NEW15</h1>
-	</div>
-	</a>
-    <a href="new_item.html">
-	<div class="box sevth">
-		<div class="date">
-			<h4>6/29/20</h4>
-		</div>
-		<h1>NEW16</h1>
-	</div>
-    </a>
+
 </div>
 </div>
 

@@ -14,6 +14,24 @@
 
 <link rel="stylesheet" type="text/css" media="screen and (max-device-width: 600px)" href="../style_mobile/my_ticket_mobile.css" />
 <link rel="stylesheet" type="text/css" media="screen and (min-device-width: 601px)" href="../style/my_ticket.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    fetch('http://127.0.0.1:8000/ticket/')
+      .then(res => res.json())
+      .then((out) => {
+
+          var str = ''
+
+            out.forEach(function(ticket) {
+            str +=   `<div class='column' style='background-color:#9FD9EA;'>
+                          <h2>`+ticket.arival+ ` - `+ ticket.departure+`<i class='fas fa-trash'></i></h2>
+                          <p>`+ticket.date+`</p>
+                          </div>`;
+            }); 
+          document.getElementById("listTicket").innerHTML = str;
+        })
+      .catch(err => console.log(err));
+  </script>
 </head>
 <body>
 
@@ -36,30 +54,12 @@
 <div id="btnContainer">
   <button class="btn" onclick="listView()"><i class="fa fa-bars"></i> List</button> 
   <button class="btn active" onclick="gridView()"><i class="fa fa-th-large"></i> Grid</button>
+  <div id="listTicket">
+
+  </div>
 
 
 
-<div class="row">
-  <div class="column" style="background-color:#9FD9EA;">
-    <h2>Lviv - Madrid<i class="fas fa-trash"></i></h2>
-    <p>20/09/2020</p>
-    
-  </div>
-  <div class="column" style="background-color:#9FD9EA;">
-    <h2>Madrid - Lviv<i class="fas fa-trash"></i></h2>
-    <p>27/09/2020</p>
-  </div>
-</div>
-
-<div class="row">
-  <div class="column" style="background-color:#9FD9EA;">
-    <h2>Lviv - London<i class="fas fa-trash"></i></h2>
-    <p>10/03/2021</p>
-  </div>
-  <div class="column" style="background-color:#9FD9EA;">
-    <h2>London - Lviv<i class="fas fa-trash"></i></h2>
-    <p>20/03/2021</p>
-  </div>
 </div>
 </div>
 </div>
@@ -107,6 +107,8 @@ function myFunction() {
 }
 
 </script>
+
+
 
 </body>
 </html>
