@@ -1,0 +1,26 @@
+
+<div class="topnav" id="myTopnav">
+  <a id="active-log" >Log out</a>
+  <a routerLink="../../news">News</a>
+  <a routerLink = "../../ticket">My Tickets</a>
+  <a routerLink = "../../home">Home</a>
+</div>
+
+<div class="bgimg-1" style='background: url({{news.photo1}}); background-size: cover;
+background-repeat: no-repeat;'>
+  <div class="caption">
+  <span class="border">{{news.title}}</span>
+  </div>
+</div>
+
+<div style="color: #777;background-color:white;text-align:center;padding:50px 80px;text-align: justify;">
+  <h3 style="text-align:center;">{{news.title}}</h3>
+  <p>{{news.about}}</p>
+</div>
+
+<div class="bgimg-1" style='background: url({{news.photo2}}); background-size: cover;
+background-repeat: no-repeat; min-height:600px ;'>
+  <div class="caption">
+  <span class="border">{{news.date}}</span>
+  </div>
+</div>

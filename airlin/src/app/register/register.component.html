@@ -1,0 +1,60 @@
+<div class = "body">
+<div class="log-window">
+    <h1 class = "log-window__title">Create acount</h1>
+    <form [formGroup]="registrationForm" >
+    <div formGroupName="inputGroup" >
+    <input type="text" formControlName="username" placeholder="Username" 
+    [ngClass]="{
+        'input-success--registration': (username.touched || username.dirty) && username.valid,
+        'input-danger--registration': (username.touched || username.dirty) && username.invalid
+    }">
+    <div class="form-control-feedback form-control-feedback--registration" 
+        *ngIf="username.invalid && (username.touched || username.dirty)">
+        <p *ngIf="username.errors.required"> username is not required</p>
+        <p *ngIf="username.errors.minlength"> username is too min</p>
+    </div>  
+    <input type="text" formControlName="email" placeholder="Email"
+    [ngClass]="{
+        'input-success--registration': (email.touched) && email.valid,
+        'input-danger--registration': (email.touched) && email.invalid
+    }">
+    <div class="form-control-feedback form-control-feedback--registration" 
+        *ngIf="email.invalid && (email.touched)">
+        <p *ngIf="email.errors.required">email is not required</p>
+        <p *ngIf="email.errors.pattern">email is not valid </p>
+    </div> 
+    <input type="password" formControlName="password" placeholder="Password"
+    [ngClass]="{
+        'input-success--registration': (password.touched) && password.valid,
+        'input-danger--registration': (password.touched) && password.invalid
+    }">
+    <div class="form-control-feedback form-control-feedback--registration" 
+        *ngIf="password.invalid && (password.touched)">
+        <p *ngIf="password.errors.required">password is not required</p>
+        <p *ngIf="password.errors.pattern"> password is not valid </p>
+    </div> 
+    <input type="password" formControlName="confirmPassword" placeholder="Confirm password" 
+    [ngClass]="{
+        'input-success--registration': (confirmPassword.touched || confirmPassword.dirty) && confirmPassword.valid && confirmPassword.value==password.value,
+        'input-danger--registration':  (confirmPassword.value!=password.value && (confirmPassword.touched || confirmPassword.dirty)) || ((confirmPassword.touched || confirmPassword.dirty) && confirmPassword.invalid)
+    }">
+<div class="form-control-feedback form-control-feedback--registration" 
+    *ngIf="(confirmPassword.value!=password.value && (confirmPassword.touched || confirmPassword.dirty)) || ((confirmPassword.touched || confirmPassword.dirty) && confirmPassword.invalid)">
+    <p *ngIf="confirmPassword.errors && confirmPassword.errors.required">password is not valid</p>
+    <p *ngIf="confirmPassword.errors && !confirmPassword.errors.required && (confirmPassword.value!=password.value && (confirmPassword.touched || confirmPassword.dirty)) ">password is not repead valid</p>
+</div>    
+    </div>
+    </form>
+    <a class ="log-window__register" (click)="registerNewUser()" 
+    [ngClass]="{
+        'btn-disable--registration disabled': username.errors || password.errors || email.errors || confirmPassword.errors}" >Register</a>
+    
+   
+    
+    <p class="log-window__login">Have account yet?<a routerLink = "../login">Log in</a></p>
+    
+</div>
+<alert type="danger" id="error" style="display: none;">
+    <strong>Error!</strong> Bad request (your email is alredy exists).
+</alert>
+</div>

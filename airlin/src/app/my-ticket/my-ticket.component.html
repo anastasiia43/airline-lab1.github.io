@@ -1,0 +1,29 @@
+
+
+<div class="topnav" id="myTopnav">
+  <a id="active-log" >Log out</a>
+  <a routerLink="../news">News</a>
+  <a routerLink = "../ticket">My Tickets</a>
+  <a routerLink = "../home" >Home</a>
+</div>
+
+<div class="bgimg-2">
+  <div class="caption">
+  <span class="border" style="background-color:transparent;font-size:50px;color: #f7f7f7;">YOUR TICKET</span>
+  </div>
+</div>
+
+<div class='list-task'>
+<div *ngFor="let task of tasks"class="task" cdkDrag>
+    <div class = "task-info">
+        <img class="icon-airline" (click) ="delete(task)"  src="../../assets/img/aircraft.png"/>
+        
+            <h3  class="task-name">{{task.arival}} - {{task.departure}}</h3>
+        
+    <button class="button-delete"><img class="icon-delete" (click) ="delete(task)"  src="../../assets/img/icons8-delete-512.png"/></button>
+            <p class="date">{{task.date}}</p> <p *ngIf="task.child" class="child">With Child</p>
+    </div> 
+</div>   
+</div>
+
+
